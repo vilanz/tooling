@@ -1,0 +1,22 @@
+name: Publish to GitHub Packages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  publish-to-npm-if-version-changed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - uses: EndBug/version-check@v1
+        id: check-version
+        with:
+          node-version: 14
+      - run: npm ci
+        if: steps.check-version.outputs.changed == 'true'
+      - run: npm publish --access public
+        if: steps.check-version.outputs.changed == 'true'
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
