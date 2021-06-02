@@ -8,7 +8,7 @@ ESLint config with Airbnb's standards plus Typescript and React support.
 
 ```js
 module.exports = {
-  ...require('@vilanz/tooling/eslint'), // can't use extends because it requires the package name to be prefixed with eslint-config-*
+  extends: './node_modules/@vilanz/tooling/eslint', // we don't have the eslint-config-* prefix
   parserOptions: {
     project: './tsconfig.json',
   },
