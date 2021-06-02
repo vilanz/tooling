@@ -10,10 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
-      - uses: EndBug/version-check@v1
-        id: check-version
         with:
           node-version: 14
+      - uses: EndBug/version-check@v1
+        id: check-version
       - run: npm ci
         if: steps.check-version.outputs.changed == 'true'
       - run: npm publish --access public
