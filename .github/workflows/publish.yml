@@ -14,6 +14,9 @@ jobs:
           node-version: 14
       - uses: EndBug/version-check@v1
         id: check-version
+        with:
+          file-url: https://unpkg.com/@vilanz/tooling@1.0.0/package.json
+          static-checking: localIsNew
       - run: npm ci
         if: steps.check-version.outputs.changed == 'true'
       - run: npm publish --access public
