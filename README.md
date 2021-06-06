@@ -2,7 +2,15 @@
 
 JS tooling for my personal projects.
 
-## eslint
+## Installing
+
+```
+npm install vilanz/tooling#main -D
+
+npx install-peerdeps @vilanz/tooling -D
+```
+
+### eslint
 
 ESLint config with Airbnb's standards plus Typescript and React support.
 
@@ -15,7 +23,7 @@ module.exports = {
 };
 ```
 
-## prettier
+### prettier
 
 Prettier config.
 
@@ -23,7 +31,7 @@ Prettier config.
 module.exports = require('@vilanz/tooling/prettier');
 ```
 
-## typescript
+### typescript
 
 Typescript config for Node 16+, with React support.
 
