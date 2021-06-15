@@ -5,7 +5,7 @@ JS tooling for my personal projects.
 ## Installing
 
 ```
-npm install vilanz/tooling#main -D
+yarn add vilanz/tooling#main -D
 
 npx install-peerdeps @vilanz/tooling -D
 ```
